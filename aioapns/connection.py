@@ -3,7 +3,7 @@ import json
 import asyncio
 from ssl import SSLContext
 from functools import partial
-from typing import Optional, Callable, NoReturn
+from typing import Optional, Callable
 
 import jwt
 import OpenSSL
@@ -18,6 +18,8 @@ from aioapns.common import NotificationResult, DynamicBoundedSemaphore,\
 from aioapns.exceptions import ConnectionClosed, ConnectionError
 from aioapns.logging import logger
 
+
+NoReturn = None
 
 class ChannelPool(DynamicBoundedSemaphore):
     def __init__(self, *args, **kwargs):
