@@ -63,7 +63,7 @@ class JWTAuthorizationHeaderProvider(AuthorizationHeaderProvider):
                 algorithm='ES256',
                 headers={'kid': self.key_id},
             ).decode('ascii')
-            self.__header = f"bearer {token}"
+            self.__header = "bearer %s" % token
         return self.__header
 
 
